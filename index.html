@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHNOVERSE - Human Civilization</title>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="title">
+    <div class="main-title">TECHNOVERSE</div>
+    <div class="sub-title">HUMAN CIVILIZATION KNOWLEDGE UNIVERSE</div>
+</div>
+
+<div id="searchPanel" role="search" aria-label="科技节点搜索">
+    <div class="search-panel-heading">
+        <span class="search-live-dot"></span>
+        <span>EXPLORE TECHNOLOGIES</span>
+        <span class="search-total">127 NODES</span>
+    </div>
+    <label class="search-input-wrap" for="technologySearch">
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="technologySearch" type="search" placeholder="搜索科技名称 / 关键词…" autocomplete="off" spellcheck="false">
+        <kbd>↵</kbd>
+    </label>
+    <div id="searchSummary" class="search-summary">127 个可探索科技节点</div>
+    <div class="search-tip">输入关键词后选择结果，镜头会自动飞向节点</div>
+
+    <section class="path-planner" aria-label="知识路径规划">
+        <div class="path-planner-title"><span>◇</span> 知识路径规划</div>
+        <div class="path-select-grid">
+            <label>起点<select id="routeStart" aria-label="路径起点"></select></label>
+            <label>终点<select id="routeEnd" aria-label="路径终点"></select></label>
+        </div>
+        <div class="path-actions">
+            <button id="findKnowledgePath" type="button">寻找关联路径</button>
+            <button id="clearKnowledgePath" type="button" class="path-clear">清除</button>
+        </div>
+        <div id="pathResult" class="path-result" aria-live="polite">选择两个节点，查看它们在知识网络中的最短关联路径。</div>
+    </section>
+
+    <div id="searchResults" class="search-results" hidden></div>
+</div>
+
+<div id="infoPanel">
+    <h2 id="infoName">Select Technology</h2>
+    <p id="infoYear"></p>
+    <p id="infoText">Click a technology node</p>
+    <section id="relationDetails" class="relation-details" hidden aria-label="关联科技"></section>
+    <button id="experimentLaunch" class="info-experiment-button" type="button" hidden disabled>🧪 开启交互实验</button>
+</div>
+
+<div id="experimentPanel" aria-hidden="true">
+    <div class="experiment-header">
+        <div class="experiment-header-line">
+            <span class="experiment-status-dot"></span>
+            <span>INTERACTIVE EXPERIMENT</span>
+        </div>
+        <h2 id="experimentTitle">DNA 双螺旋实验</h2>
+    </div>
+
+    <div id="experimentContent"></div>
+
+    <button id="closeExperiment" class="experiment-close" type="button">
+        关闭实验
+    </button>
+</div>
+
+<script type="module" src="main.js"></script>
+
+</body>
+</html>
